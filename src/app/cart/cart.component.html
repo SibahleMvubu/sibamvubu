@@ -1,0 +1,144 @@
+
+
+    <!-- Start Header Area -->
+    <header class="default-header">
+        <div class="menutop-wrap">
+          <div class="menu-top container">
+            <div class="d-flex justify-content-between align-items-center">
+              <ul class="list">
+                <li><a href="tel:+12312-3-1209">064 435 4428</a></li>
+                <li><a href="mailto:support@colorlib.com">Developed By: Sibahle Mvubu</a></li>								
+              </ul>
+    
+            </div>
+          </div>					
+        </div>
+        <nav class="navbar navbar-expand-lg  navbar-light">
+          <div class="container">
+              <a class="navbar-brand" href="#">
+               UNYAKA
+               <br>
+               WESITHEMBISO
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#catagory">About</a></li>
+                <li><a href="#men">Shop</a></li>
+                <li><a href="#women">Contact Us</a></li>
+               								
+                </ul>
+              </div>						
+          </div>
+        </nav>
+      </header>
+
+      <br>
+      <br>
+      <br>
+            <section class="banner-area organic-breadcrumb">
+                <div class="container">
+                    <div class="breadcrumb-banner d-flex flex-wrap align-items-center">
+                        <div class="col-first">
+                            <h1>Shopping Cart</h1>
+                             <nav class="d-flex align-items-center justify-content-start">
+                                <a href="index.html">Home<i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                                <a href="cart.html">Shopping Cart</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End Banner Area -->
+
+            <!-- Start Cart Area -->
+            <div class="container">
+                <div class="cart-title">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h6 class="ml-15">Product</h6>
+                        </div>
+                        <div class="col-md-2">
+                            <h6>Price</h6>
+                        </div>
+                        <div class="col-md-2">
+                            <h6>Season</h6>
+                        </div>
+                        <div class="col-md-2">
+                            <h6>Quantity</h6>
+                        </div>
+                        <div class="col-md-2">
+                            <h6>Total</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-single-item"  *ngFor="let item of items">
+                    <div class="row align-items-center">
+                        <div class="col-md-4 col-12">
+                            <div class="product-item d-flex align-items-center">
+                                <img src="../../assets/img/{{item.product.photo}}" class="img-fluid" width="50">
+                                <h6> {{item.product.name}}</h6>
+
+                                
+                            </div>
+                            <a (click)="remove(item.product.id)">  Remove</a> 
+                        </div>
+                        <div class="col-md-2 col-6">
+                            <div class="price"> R{{item.product.price}}</div>
+                        </div>
+                        <div class="col-md-2 col-6">
+                            <div class="quantity-container d-flex align-items-center mt-15">
+                                <input type="text" class="quantity-amount" value="1 - 4" />
+                                <div class="arrow-btn d-inline-flex flex-column">
+                                    <button class="increase arrow" type="button" title="Increase Quantity"><span class="lnr lnr-chevron-up"></span></button>
+                                    <button class="decrease arrow" type="button" title="Decrease Quantity"><span class="lnr lnr-chevron-down"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-12">
+                            <div class="total">{{item.quantity}}</div>
+                        </div>
+                        <div class="col-md-2 col-12">
+                            <div class="total">R{{item.product.price * item.quantity}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="subtotal-area d-flex align-items-center justify-content-end">
+                    <div class="title text-uppercase">Subtotal</div>
+                    <div class="subtotal">R{{total}}</div>
+                </div>
+                <br>
+                <div class="shipping-area d-flex justify-content-end">
+                    <div class="tile text-uppercase">Payment Method</div>
+                    <form action="#" class="d-inline-flex flex-column align-items-end">
+                        <ul class="d-flex flex-column align-items-end">
+                            
+                            
+                            <li class="filter-list">
+                                <label for="local-delivery">EFT</label>
+                                <input class="pixel-radio" type="radio" id="local-delivery" name="brand">
+                            </li>
+                            <li class="filter-list">
+                                <label for="flat-rate-2">Cash On Delivery</label>
+                                <input class="pixel-radio" type="radio" id="flat-rate-2" name="brand">
+                            </li>
+                             </ul>
+                      
+                       
+                            </form>
+
+                </div>
+
+
+                <div class="subtotal-area d-flex align-items-center justify-content-end">
+        
+                    <button class="view-btn color-2 mt-10" [routerLink]="['/checkout']"><span>Checkout</span></button>
+                </div>
+   
+       
+
+
+            
